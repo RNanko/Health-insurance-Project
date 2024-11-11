@@ -1,5 +1,5 @@
 # Health-insurance-Project
-Data set: https://www.kaggle.com/datasets/teertha/ushealthinsurancedataset/code
+Data set: https://www.kaggle.com/datasets/teertha/ushealthinsurancedataset/data
 Health Insurance Cost Prediction
 This project focuses on predicting health insurance costs based on individual attributes using machine learning models. The dataset includes six features: age, sex, BMI, children, smoker status, and region, with "charges" as the target variable.
 

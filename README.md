@@ -2,7 +2,7 @@
 
 Table of Contents
 - [Project Background](#project-background)
-- [Exploratory Data Analysis (EDA)]
+- [Exploratory Data Analysis (EDA)](#EDA)
 - [Machine Learning Process]
 - [Results]
 - [Recommendations]

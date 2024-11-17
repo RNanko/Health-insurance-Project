@@ -9,8 +9,43 @@ Table of Contents
 Health insurenth is big part of USA economy going to be influesed more by AI technologys. Collected data have to help improve business proces and provide insieghts on price-building. 
 
 ## Executive Summary
-This dataset contains 1338 rows of insured data, where the Insurance charges are given against the following attributes of the insured: Age, Sex, BMI, Number of Children, Smoker and Region. There are no missing or undefined values in the dataset.
+This dataset contains 1338 rows of insured data, where the Insurance charges are given against the following attributes of the insured: Age, Sex, BMI, Number of Children, Smoker and Region. There are no missing or undefined values in the dataset. Date head:
 ![alt](https://github.com/RNanko/Health-insurance-Project/blob/main/Visualizations/head(10).png)
+
+
+## Insights Deep-Dive
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 Please checkData set: https://www.kaggle.com/datasets/teertha/ushealthinsurancedataset/data

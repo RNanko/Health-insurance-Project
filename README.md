@@ -1,41 +1,40 @@
 # ML project with data analysis
 
-Table of Contents
+## Table of Contents
 - [Project Background](#project-background)
-- [Exploratory Data Analysis (EDA)](#EDA)
-- [Machine Learning Process]
-- [Results]
-- [Recommendations]
-- [Dataset]
+- [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
+- [Machine Learning Process](#machine-learning-process)
+    - [Model Evaluation](#model-evaluation)
+    - [Feature importances](#feature-importances)
+- [Results](#results)
+- [Recommendations](#recommendations)
+- [Dataset](#dataset)
 
 
 
 ## Project Background
-Health insurenth is big part of USA economy going to be influesed more by AI technologys. Collected data have to help improve business proces and provide insieghts on price-building. 
+Health insurance is a significant part of the U.S. economy and is poised to be further influenced by AI technologies. This project analyzes health insurance data to improve business processes and provide insights into price modeling.
 ***
 
 ## EDA
-This dataset contains 1338 rows of insured data, where the Insurance charges are given against the following attributes of the insured: Age, Sex, BMI, Number of Children, Smoker and Region. There are no missing or undefined values in the dataset. Data head:
+The dataset contains 1,338 rows of insured data, including attributes such as age, sex, BMI, number of children, smoking habits, and region. The target variable is the insurance charges. There are no missing values.
 ![alt](https://github.com/RNanko/Health-insurance-Project/blob/main/Visualizations/head(10).png)
 
-* Age rate 18-64
-* Dependent(children) from 0 to 5 added to Health Insurance
-* Avarege charges **13270.42$** Min: **4740.28$** Max: **63770.42$**
+Key insights:
+Age range: 18–64 years
+Number of dependents: 0–5
+Average charges: $13,270.42 (Min: $4,740.28; Max: $63,770.42)
 
-To explore tmhe data, we will create a dashboard that represents our features and allows us to compare them.
-Data is well represented. We dont see any incline beyond male and famale. The youngest group slightly bigger then other. 
-Geographicly data represented almost equeal. The future smoker going to be so influence on variable and create visiable 3 clusters.
+To understand the dataset, an interactive dashboard was created. It highlights the distribution of features and reveals clusters influenced by smoking habits.
 ![alt](https://github.com/RNanko/Health-insurance-Project/blob/main/Visualizations/Dashboard.png)
 ***
 
 ## ML process
 ### Data preparation
-Not numerical data should be converted to numerical. 
-We apply One-Hot Encoding (or we can use get_dummies) for not ordinal categorical feature:
-* "sex"
-* "region"
-Ordinal data will be encoded using LabelEncoder:
-* "smoker" (0 for non-smoker)
+Non-numerical features were encoded:
+One-Hot Encoding for categorical features: sex, region.
+Label Encoding for ordinal features: smoker.
+Correlation analysis revealed that smoker, bmi, and age are the most significant predictors of charges.
 
 As data have only 10 fetures we keep all for build model. 
 Corelation matrix shows that "smoker," "bmi," and "age" are highly correlated with our charges-target variable.
@@ -43,7 +42,7 @@ Corelation matrix shows that "smoker," "bmi," and "age" are highly correlated wi
 
 ### Model evaluation 
 
-We use the R² score (coefficient of determination) to evaluate models.
+We evaluated models using the R² score to measure their ability to predict charges accurately.
 
 For this regeresion task we start from:
 * Random Forest Regressor:
@@ -62,38 +61,41 @@ As expected Ridge dont feet data well and shows worse performance. While Random 
   - Best cross-validated score: **0.8565**
   - Test R^2 score: **0.8802**
 
-Chart will help repraesent evaluation.
+Comparison of model scores:
 ![alt](https://github.com/RNanko/Health-insurance-Project/blob/main/Visualizations/Model%20Scores%20Comparison.png)
 
-After evaluating four models, we keep XGBoost and RandomForest a for the final MAE and RMSE test.
-XGBoost: 
-MAE: 2454.8804, 
-RMSE: 4254.1989
-RandomForest: 
-MAE: 2474.3144, 
-RMSE: 4327.7243
-
-Winner XGBoost with slightly better MAE and RMSE result. 
+Final Evaluation:
+After testing, XGBoost outperformed the other models with the best Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE):
+MAE: $2,454.88
+RMSE: $4,254.20
+***
 
 ### Feature importances 
 
-Feature importances module helps extrxt and sort most valuable features for model.
-We also able distunguish that health related features most valuable for insurance charge.
+Using the feature importance module, we determined the most influential variables:
 ![alt](https://github.com/RNanko/Health-insurance-Project/blob/main/Visualizations/Most%20important%20feature.png)
+Health-related attributes like smoker and bmi were identified as the most critical.
 ***
 
 ## Results
-Help!
-Example my data result: Self helth insurance will be cost: 5638.17
+Sample Prediction:
+The predicted value for a test individual was $6,046.76, compared to the actual charge of $5,272.18. 
+This difference arises because machine learning models are approximations—they attempt to find patterns in data and make predictions based on these patterns.
 
-y_pred = best_XGB.predict(np.array(X_test.iloc[1]).reshape(1, -1))
-print(y_pred, y_test.iloc[1])
-[6046.7563] 5272.1758
+Key Points:
+* Model Strength: The small error (about $774.58) suggests the model (XGBoost in this case) is well-tuned for the dataset and is capable of making accurate predictions.
+* Factors Influencing the Result: Features like smoker, bmi, age, and the number of children heavily influence the insurance charge. Any slight deviation in these features (or the way they interact) can affect predictions.
+* Residual Error: No model is perfect. This small gap reflects real-world variability and the inherent limitations of the training data or the model.
+
+This project successfully demonstrates how machine learning can predict health insurance charges by leveraging key features. It highlights the potential of AI to transform the insurance industry by providing insights into cost drivers and enabling personalized premium calculation. However, for broader applicability, further data enrichment and fine-tuning are recommended.
 ***
 
 ## Recomendation
 
-Help! Tell story about importantі GRID and something else
-
+Enhance Smoking Policies: 
+* As smoking status significantly impacts charges, insurance companies should implement tailored plans for smokers and non-smokers.
+* Data Augmentation: Future datasets should include additional health metrics like pre-existing conditions or lifestyle habits for better predictions.
+* Use Grid Search or Randomized Search: For hyperparameter tuning to further optimize models like Random Forest or XGBoost.
 ***
+
 Please checkData [set](https://www.kaggle.com/datasets/teertha/ushealthinsurancedataset/data).

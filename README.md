@@ -9,13 +9,18 @@ Table of Contents
 Health insurenth is big part of USA economy going to be influesed more by AI technologys. Collected data have to help improve business proces and provide insieghts on price-building. 
 
 ## Executive Summary
-This dataset contains 1338 rows of insured data, where the Insurance charges are given against the following attributes of the insured: Age, Sex, BMI, Number of Children, Smoker and Region. There are no missing or undefined values in the dataset. Date head:
+This dataset contains 1338 rows of insured data, where the Insurance charges are given against the following attributes of the insured: Age, Sex, BMI, Number of Children, Smoker and Region. There are no missing or undefined values in the dataset. Data head:
 ![alt](https://github.com/RNanko/Health-insurance-Project/blob/main/Visualizations/head(10).png)
 
+* Age rate 18-64
+* Dependent(children) from 0 to 5 added to Health Insurance
+* Avarege charges **13270.42$** Min: **4740.28$** Max: **63770.42$**
 
-## Insights Deep-Dive
-
-
+## EDA
+To explore tmhe data, we will create a dashboard that represents our features and allows us to compare them.
+Data is well represented. We dont see any incline beyond male and famale. The youngest group slightly bigger then other. 
+Geographicly data represented almost equeal. The future smoker going to be so influence on variable and create visiable 3 clusters.
+![alt](https://github.com/RNanko/Health-insurance-Project/blob/main/Visualizations/Dashboard.png)
 
 
 

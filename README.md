@@ -98,4 +98,7 @@ Enhance Smoking Policies:
 * Use Grid Search or Randomized Search: For hyperparameter tuning to further optimize models like Random Forest or XGBoost.
 ***
 
-Please checkData [set](https://www.kaggle.com/datasets/teertha/ushealthinsurancedataset/data).
+Please check [Data](https://www.kaggle.com/datasets/teertha/ushealthinsurancedataset/data).
+Pleas check [Jupyter Notebook](https://github.com/RNanko/Health-insurance-Project/blob/main/Health%20Insurance%20project.ipynb)
+
+Thank you for attention.

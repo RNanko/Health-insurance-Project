@@ -79,11 +79,12 @@ Health-related attributes like smoker and bmi were identified as the most critic
 
 ## Results
 Sample Prediction:
-The predicted value for a test individual was $6,046.76, compared to the actual charge of $5,272.18. 
+The predicted value for a test individual was **$6,046.76**, compared to the actual charge of **$5,272.18**. 
 This difference arises because machine learning models are approximations—they attempt to find patterns in data and make predictions based on these patterns.
 
 Key Points:
-* Model Strength: The small error (about $774.58) suggests the model (XGBoost in this case) is well-tuned for the dataset and is capable of making accurate predictions.
+* MAE of **$2,454.88** indicates that most predictions are relatively close to the true charges.
+* RMSE of **$4,254.20** suggests that while most predictions are accurate, some errors are much larger (outliers), which pull the RMSE value higher.
 * Factors Influencing the Result: Features like smoker, bmi, age, and the number of children heavily influence the insurance charge. Any slight deviation in these features (or the way they interact) can affect predictions.
 * Residual Error: No model is perfect. This small gap reflects real-world variability and the inherent limitations of the training data or the model.
 
